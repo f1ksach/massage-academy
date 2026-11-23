@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101114">
+  <title>Massage Academy</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+
+    <header class="header">
+      <div class="logo">MA<span>.</span></div>
+      <div class="header-info">
+        <strong>MASSAGE ACADEMY</strong>
+        <small>Обучение массажу</small>
+      </div>
+      <div class="avatar">👤</div>
+    </header>
+
+    <main>
+      <!-- ГЛАВНАЯ -->
+      <section id="home" class="page active">
+        <div class="hero">
+          <span class="tag">PREMIUM EDUCATION</span>
+          <h1>Искусство<br>прикосновения.</h1>
+          <p>Профессиональные видеоуроки массажа
+             от практикующего специалиста.</p>
+          <button data-page="catalog">Изучить курсы →</button>
+        </div>
+
+        <h2>Популярные уроки</h2>
+        <div id="featured-courses"></div>
+      </section>
+
+      <!-- КАТАЛОГ -->
+      <section id="catalog" class="page">
+        <h1>Каталог уроков</h1>
+        <p class="subtitle">Выберите направление обучения</p>
+        <div id="course-list"></div>
+      </section>
+
+      <!-- КОШЕЛЁК -->
+      <section id="wallet" class="page">
+        <h1>Мой кошелёк</h1>
+
+        <div class="balance-card">
+          <span>Доступный баланс</span>
+          <h2><span class="balance-value">0</span> ₴</h2>
+          <small>Massage Academy Wallet</small>
+        </div>
+
+        <button id="topup-btn" class="primary-btn">
+          + Пополнить баланс
+        </button>
+
+        <h2>История операций</h2>
+        <div id="transactions">
+          <p class="subtitle">Операций пока нет</p>
+        </div>
+      </section>
+
+      <!-- ПРОФИЛЬ -->
+      <section id="profile" class="page">
+        <h1>Мой профиль</h1>
+
+        <div class="profile-card">
+          <div class="profile-avatar">👤</div>
+          <h2 id="profile-name">Гость</h2>
+          <p id="profile-id">Telegram ID: —</p>
+          <p>Баланс: <b><span class="balance-value">0</span> ₴</b></p>
+        </div>
+
+        <h2>Мои видеоуроки</h2>
+        <div id="my-courses">
+          <p class="subtitle">У вас пока нет покупок</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- НИЖНЕЕ МЕНЮ -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-page="home">
+        <span>⌂</span>Главная
+      </button>
+      <button class="nav-btn" data-page="catalog">
+        <span>▦</span>Каталог
+      </button>
+      <button class="nav-btn" data-page="wallet">
+        <span>◈</span>Кошелёк
+      </button>
+      <button class="nav-btn" data-page="profile">
+        <span>♙</span>Профиль
+      </button>
+    </nav>
+
+  </div>
+</body>
+</html>

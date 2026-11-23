@@ -1,0 +1,388 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #101114;
+  --card: #1b1d22;
+  --card-light: #24262c;
+  --gold: #d7b778;
+  --text: #f5f3ef;
+  --muted: #96979f;
+  --border: rgba(255,255,255,.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.app {
+  max-width: 520px;
+  min-height: 100dvh;
+  margin: auto;
+  background: var(--bg);
+  padding-bottom: 105px;
+}
+
+/* HEADER */
+
+.header {
+  height: 82px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  background: var(--gold);
+  color: #111;
+  border-radius: 14px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: white;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-info strong {
+  font-size: 12px;
+  letter-spacing: 1.3px;
+}
+
+.header-info small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.avatar {
+  margin-left: auto;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  background: var(--card-light);
+  display: grid;
+  place-items: center;
+}
+
+/* PAGES */
+
+.page {
+  display: none;
+  padding: 23px 20px;
+  animation: fadeUp .35s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 28px;
+  letter-spacing: -1px;
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-size: 19px;
+  margin: 28px 0 17px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  padding: 34px 25px;
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(215,183,120,.22),
+      transparent 55%
+    ),
+    linear-gradient(140deg, #29251f, #17181c);
+  border: 1px solid rgba(215,183,120,.16);
+}
+
+.tag {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.hero h1 {
+  margin: 22px 0 15px;
+  font-size: 35px;
+  line-height: 1.13;
+}
+
+.hero p {
+  color: #bcb8b2;
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 260px;
+}
+
+.hero button,
+.primary-btn {
+  border: 0;
+  background: var(--gold);
+  color: #151515;
+  border-radius: 13px;
+  padding: 15px 22px;
+  font-weight: 800;
+  margin-top: 20px;
+  transition: transform .2s, opacity .2s;
+}
+
+.hero button:active,
+.primary-btn:active {
+  transform: scale(.97);
+}
+
+.primary-btn {
+  width: 100%;
+}
+
+/* COURSE CARDS */
+
+.course-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 19px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  transition: transform .2s;
+}
+
+.course-card:active {
+  transform: scale(.98);
+}
+
+.course-image {
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+  display: block;
+  background: var(--card-light);
+}
+
+.course-content {
+  padding: 17px;
+}
+
+.course-content h3 {
+  margin: 0 0 9px;
+  font-size: 16px;
+}
+
+.course-content p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.course-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.course-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.buy-btn {
+  background: var(--gold);
+  color: #111;
+  border: none;
+  padding: 11px 17px;
+  border-radius: 11px;
+  font-weight: 800;
+}
+
+/* WALLET */
+
+.balance-card {
+  padding: 30px 25px;
+  border-radius: 23px;
+  background: linear-gradient(
+    135deg,
+    #353024,
+    #1e2025 75%
+  );
+  border: 1px solid rgba(215,183,120,.3);
+  margin-top: 23px;
+}
+
+.balance-card > span {
+  color: #c2bdb1;
+  font-size: 13px;
+}
+
+.balance-card h2 {
+  font-size: 43px;
+  margin: 15px 0;
+  color: var(--gold);
+}
+
+.balance-card small {
+  color: var(--muted);
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+
+/* PROFILE */
+
+.profile-card {
+  margin-top: 22px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: var(--card-light);
+  display: grid;
+  place-items: center;
+  font-size: 34px;
+  margin: auto;
+}
+
+.profile-card h2 {
+  margin: 16px 0 8px;
+}
+
+.profile-card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.profile-card b {
+  color: var(--gold);
+}
+
+/* TRANSACTIONS */
+
+.transaction {
+  background: var(--card);
+  border-radius: 13px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.transaction .positive {
+  color: #79d5a0;
+}
+
+.transaction .negative {
+  color: #e8a1a1;
+}
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 520px;
+  padding: 12px 10px calc(12px + env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: space-around;
+  background: rgba(23,24,28,.96);
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  z-index: 100;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  min-width: 65px;
+  transition: color .2s;
+}
+
+.nav-btn span {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.nav-btn.active {
+  color: var(--gold);
+}
+
+/* SMALL SCREENS */
+
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .page {
+    padding: 20px 15px;
+  }
+}
